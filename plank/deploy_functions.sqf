@@ -1,6 +1,6 @@
 #include "plank_macros.h"
 
-#include "\userconfig\plank\log\deploy.h"
+#include "userconfig\plank\log\deploy.h"
 #include "logbook.h"
 
 plank_deploy_fnc_preInit = {

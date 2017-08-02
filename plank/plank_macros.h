@@ -1,13 +1,13 @@
 #ifndef PLANK_MACROS_H
 #define PLANK_MACROS_H
 
-#include "\userconfig\plank\setting.h"
-#include "\userconfig\plank\log\global.h"
+#include "userconfig\plank\setting.h"
+#include "userconfig\plank\log\global.h"
 
 #define PLANK_VERSION                           2.0.0
 #define STR_PLANK_VERSION                       "2.0.0"
 
-#define CONCAT_ADDON_PATH(FILE)                 x\ark\addons\plank\FILE
+#define CONCAT_ADDON_PATH(FILE)                 plank\FILE
 #define ADDON_PATH(FILE)                        #CONCAT_ADDON_PATH(FILE)
 
 #define PLANK_BASE_CONFIG                       "Plank"

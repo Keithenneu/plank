@@ -1,6 +1,6 @@
 #include "plank_macros.h"
 
-#include "\userconfig\plank\log\export.h"
+#include "userconfig\plank\log\export.h"
 #include "logbook.h"
 
 #define NEW_LINE                toString [13, 10]

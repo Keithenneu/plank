@@ -1,6 +1,6 @@
 #include "plank_macros.h"
 
-#include "\userconfig\plank\log\ui.h"
+#include "userconfig\plank\log\ui.h"
 #include "logbook.h"
 
 #define LOCK_SHORTCUT_KEY_CODE                  33 // F

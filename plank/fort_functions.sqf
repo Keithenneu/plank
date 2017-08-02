@@ -1,6 +1,6 @@
 #include "plank_macros.h"
 
-#include "\userconfig\plank\log\fort.h"
+#include "userconfig\plank\log\fort.h"
 #include "logbook.h"
 
 
