@@ -21,6 +21,9 @@ if (plank_isEnabled && {!isDedicated}) then {
     [] call plank_deploy_fnc_preInit;
     [] call plank_export_fnc_preInit;
 
+    _build = ["plank_build", "Build", "plank\tower.paa", { [] spawn { sleep 0.1; [] call plank_ui_fnc_createSettingsDialog } }, {(player getVariable ["plank_action_visible", false]) && driver player == player}] call ace_interact_menu_fnc_createAction;
+    [typeOf player, 1, ["ACE_SelfActions"], _build] call ace_interact_menu_fnc_addActionToClass;
+
     plank_isInitialized = true;
     ["plank.initialized", []] call plank_event_fnc_emitEvent;
     INFO("plank",FMT_1("Plank version '%1' has been successfully initialized.",STR_PLANK_VERSION));

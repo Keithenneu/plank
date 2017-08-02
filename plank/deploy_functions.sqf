@@ -105,20 +105,11 @@ plank_deploy_fnc_createFortification = {
 plank_deploy_fnc_addPlankAction = {
     FUN_ARGS_1(_unit);
 
-    if (isNil {_unit getVariable "plank_deploy_plankActionId"}) then {
-        DECLARE(_plankActionId) = _unit addAction ['<t color="#3748E3">Plank</t>', ADDON_PATH(plank_action.sqf), [], 100, false, false, "", "driver _target == _this"];
-        _unit setVariable ["plank_deploy_plankActionId", _plankActionId, false];
-    };
+    _unit setVariable ["plank_action_visible", true];
 };
 
 plank_deploy_fnc_removePlankAction = {
-    FUN_ARGS_1(_unit);
-
-    DECLARE(_actionId) = _unit getVariable "plank_deploy_plankActionId";
-    if (!isNil {_actionId}) then {
-        _unit removeAction _actionId;
-        _unit setVariable ["plank_deploy_plankActionId", nil, false];
-    };
+    _unit setVariable ["plank_action_visible", false];
 };
 
 plank_deploy_fnc_updateFortPlacement = {
