@@ -16,7 +16,6 @@ if (plank_isEnabled && {!isDedicated}) then {
     [] call compile preProcessFileLineNumbers ADDON_PATH(ui_functions.sqf);
     [] call compile preProcessFileLineNumbers ADDON_PATH(export_functions.sqf);
     [] call compile preProcessFileLineNumbers ADDON_PATH(api_functions.sqf);
-    [] call compile preprocessFileLineNumbers ADDON_PATH(arma3_fortifications.sqf);
 
     [] call plank_deploy_fnc_preInit;
     [] call plank_export_fnc_preInit;
