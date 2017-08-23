@@ -1,3 +1,8 @@
+FORK
+====
+
+This fork provides the plank script as a script, instead of an addon, which is much easier to deploy for single use missions.
+
 Plank
 =====
 
@@ -21,7 +26,17 @@ Usage
 1. Copy `\plank` directory into the mission directory
 2. Put line `#include "plank\plank.h"` in `description.ext`
 3. Put line `call compile preprocessFileLineNumbers "plank\plank_init.sqf";` in `init.sqf`
-4. To add fortifications to a unit use `[_unit, [<number of 1. fort>, <number of 2. fort>, ..., <number of n. fort>]] call plank_api_fnc_forceAddFortifications`. For example: `[player, [2, 1, 2, 2, 0, 2, 0, 0]] call plank_api_fnc_forceAddFortifications;`
+4. Define fortifications in `plank\plank.h`
+5. Give variable names to you units, e.g. engineer_1
+6. To add fortifications to a unit use `[unit_variable, [<number of 1. fort>, <number of 2. fort>, ..., <number of n. fort>]] call plank_api_fnc_forceAddFortifications`. For example: `[engineer_1, [2, 1, 2, 2, 0, 2, 0, 0]] call plank_api_fnc_forceAddFortifications;`
+
+Example `init.sqf`:
+```sqf
+call compile preprocessFileLineNumbers "plank\plank_init.sqf";
+
+[engineer_1, [2, 1, 2, 2, 0, 2, 0, 0]] call plank_api_fnc_forceAddFortifications;
+[engineer_2, [2, 1, 1, 1, 5, 2, 3, 3]] call plank_api_fnc_forceAddFortifications;
+```
 
 ##Ingame
 
@@ -47,6 +62,7 @@ To add new fortifications edit either `plank\arma2_fortifications.sqf` for Arma 
 * **Code** - A piece of code that will be executed when the object placement is confirmed. Set it to `{}`, if you don't want to use it. The unit who confirmed the placement and the object placed, are passed as arguments to the code. An example code that hints the players name could look like `{hint str (_this select 0);}`.
 
 
-## API
+API
+===
 
 For available functions check [api_function.sqf](https://github.com/kami-/plank/blob/master/plank/api_functions.sqf).
